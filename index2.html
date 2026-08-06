@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>d. von Pontiak · Estudio de Tatuajes</title>
+<meta name="description" content="Estudio de tatuajes. Trabajo tradicional y a medida. Reservá tu turno.">
+
+<!-- ============================================================
+     CÓMO EDITAR ESTA PÁGINA (leé esto primero)
+     ------------------------------------------------------------
+     1) NOMBRE DEL ESTUDIO: el logo va en logo.png (arriba). El texto del nombre
+        aparece en el <title> y en el pie; buscá "d. von Pontiak" para cambiarlo.
+     2) REDES: buscá el comentario "== REDES ==" y poné tus links.
+     3) CONTACTO: los botones y el formulario usan Instagram (@d.vonpontiak__).
+     4) PORTFOLIO: buscá "== PORTFOLIO ==". Cada trabajo es una
+        <figure>. Para usar TUS fotos, reemplazá el bloque <svg>...
+        </svg> por: <img src="assets/mi-trabajo.jpg" alt="...">
+        (creá una carpeta /assets y subí ahí tus imágenes a GitHub).
+     5) STORE: buscá "== STORE ==" para cambiar productos y precios.
+     ============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bone:#e9e2d0;
+    --bone-deep:#ded5c0;
+    --ink:#17130f;
+    --ink-soft:#5b5245;
+    --red:#c2181b;
+    --red-dark:#7c0d10;
+    --line:#c8bfa9;
+    --maxw:1180px;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--bone);
+    color:var(--ink);
+    font-family:"Work Sans",system-ui,sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+
+  /* textura de papel / hoja de flash */
+  body::before{
+    content:"";
+    position:fixed; inset:0;
+    pointer-events:none;
+    z-index:0;
+    opacity:.5;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.28'/%3E%3C/svg%3E");
+    mix-blend-mode:multiply;
+  }
+
+  a{color:inherit}
+  img{max-width:100%;display:block}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px;position:relative;z-index:2}
+
+  .eyebrow{
+    font-family:"Special Elite",monospace;
+    font-size:.8rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--red-dark);
+    display:inline-flex;align-items:center;gap:.6em;
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--red)}
+
+  h2{
+    font-family:"Special Elite",monospace;
+    font-weight:400;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    line-height:1.05;
+    font-size:clamp(2rem,5.2vw,3.3rem);
+    margin:.35em 0 .15em;
+  }
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:20;
+    background:color-mix(in srgb,var(--bone) 82%,transparent);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:20px;height:66px;
+  }
+  .brand{display:flex;align-items:center;text-decoration:none}
+  .brand-logo{height:34px;width:auto;display:block}
+  @media(max-width:480px){ .brand-logo{height:28px} }
+
+  /* menú desplegable */
+  .menu{position:relative}
+  .menu-btn{
+    display:inline-flex;align-items:center;gap:10px;cursor:pointer;
+    font-family:"Special Elite",monospace;font-size:.82rem;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--ink);
+    background:transparent;border:2px solid var(--ink);
+    padding:9px 16px;transition:background .2s,color .2s;
+  }
+  .menu-btn:hover,.menu-btn[aria-expanded="true"]{background:var(--ink);color:var(--bone)}
+  .menu-btn .bars{display:inline-flex;flex-direction:column;gap:3px}
+  .menu-btn .bars span{display:block;width:18px;height:2px;background:currentColor}
+  .menu-panel{
+    position:absolute;top:calc(100% + 10px);right:0;z-index:30;
+    min-width:200px;display:flex;flex-direction:column;
+    background:var(--bone);border:2px solid var(--ink);
+    box-shadow:8px 10px 0 var(--red-dark);
+  }
+  .menu-panel[hidden]{display:none}
+  .menu-panel a{
+    text-decoration:none;font-family:"Special Elite",monospace;
+    font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--ink);padding:14px 18px;border-bottom:1px solid var(--line);
+    transition:background .18s,color .18s;
+  }
+  .menu-panel a:last-child{border-bottom:0}
+  .menu-panel a:hover{background:var(--ink);color:var(--bone)}
+
+  .btn{
+    display:inline-block;text-decoration:none;cursor:pointer;
+    font-family:"Special Elite",monospace;
+    font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;
+    padding:11px 20px;border:2px solid var(--ink);
+    background:var(--ink);color:var(--bone);
+    transition:transform .15s ease, background .2s, color .2s;
+  }
+  .btn:hover{background:var(--red);border-color:var(--red);transform:translateY(-2px)}
+  .btn.ghost{background:transparent;color:var(--ink)}
+  .btn.ghost:hover{background:var(--ink);color:var(--bone);border-color:var(--ink)}
+
+  /* ---------- GLITTER (fondo de estrellitas en toda la página) ---------- */
+  #glitter{
+    position:fixed;inset:0;width:100%;height:100%;
+    z-index:1;pointer-events:none;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:88vh;display:flex;align-items:center;overflow:hidden}
+
+  .hero-copy{position:relative;z-index:3;max-width:640px}
+  .hero-logo{
+    width:min(90vw,520px);height:auto;display:block;
+    margin:.15em 0 .35em;
+    filter:drop-shadow(0 6px 16px rgba(23,19,15,.12));
+  }
+  .hero p.lead{font-size:clamp(1rem,2.4vw,1.25rem);max-width:34ch;color:var(--ink-soft)}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
+
+  /* ---------- SECCIONES ---------- */
+  section{position:relative;z-index:2;padding:96px 0;border-top:1px solid var(--line)}
+  .sec-head{max-width:620px;margin-bottom:44px}
+  .sec-head p{color:var(--ink-soft);margin:.4em 0 0}
+
+  /* ---------- PORTFOLIO ---------- */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}}
+
+  figure.piece{
+    margin:0;position:relative;aspect-ratio:1/1;
+    background:var(--bone-deep);
+    border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+    overflow:hidden;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  figure.piece:hover{transform:translateY(-4px);box-shadow:8px 10px 0 var(--ink)}
+  figure.piece svg.flash{width:56%;height:56%;color:var(--ink);transition:color .2s}
+  figure.piece:hover svg.flash{color:var(--red)}
+  figure.piece img{width:100%;height:100%;object-fit:cover}
+  figure.piece figcaption{
+    position:absolute;left:0;right:0;bottom:0;
+    font-family:"Special Elite",monospace;font-size:.74rem;
+    letter-spacing:.1em;text-transform:uppercase;
+    padding:10px 12px;color:var(--bone);
+    background:linear-gradient(transparent,rgba(23,19,15,.86));
+    transform:translateY(100%);transition:transform .22s ease;
+  }
+  figure.piece:hover figcaption{transform:translateY(0)}
+
+  /* ---------- FEED DE INSTAGRAM ---------- */
+  .ig-embed{min-height:340px;position:relative}
+  .ig-embed iframe{width:100%!important;border:0;display:block}
+  .ig-placeholder{
+    border:2px dashed var(--line);background:var(--bone-deep);
+    min-height:360px;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;gap:18px;
+    text-align:center;padding:44px 24px;color:var(--ink-soft);
+  }
+  .ig-placeholder svg{width:48px;height:48px;color:var(--red)}
+  .ig-placeholder p{margin:0;max-width:38ch;line-height:1.5}
+  .ig-placeholder strong{color:var(--ink)}
+
+  /* ocultar la marca de agua "Made with Elfsight" del plan gratis */
+  a[href*="elfsight.com"],
+  .eapps-link,
+  [class*="eapps-widget-toolbar"],
+  [class*="ElfsightLogo"],
+  [class*="-Branding"]{ display:none !important; visibility:hidden !important; }
+
+  /* ---------- MERCH ---------- */
+  .merch-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:860px}
+  @media(max-width:640px){ .merch-grid{grid-template-columns:1fr} }
+  .product{
+    border:2px solid var(--ink);background:var(--bone);
+    display:flex;flex-direction:column;overflow:hidden;
+    transition:transform .18s ease,box-shadow .18s ease;
+  }
+  .product:hover{transform:translateY(-4px);box-shadow:8px 10px 0 var(--red-dark)}
+  .product-media{
+    background:var(--bone-deep);display:flex;align-items:center;justify-content:center;
+    padding:22px;border-bottom:2px solid var(--ink);
+    aspect-ratio:1080 / 620;
+  }
+  .product-media img{width:100%;height:100%;object-fit:contain;display:block;filter:drop-shadow(0 6px 12px rgba(23,19,15,.12))}
+  .product-body{padding:18px 20px 20px;display:flex;flex-direction:column}
+  .product .tag{font-family:"Special Elite",monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--red-dark)}
+  .product h3{font-family:"Special Elite",monospace;font-weight:400;text-transform:uppercase;letter-spacing:.06em;font-size:1.25rem;margin:.5em 0 .2em}
+  .product .price{font-family:"Special Elite",monospace;font-size:1.5rem;margin:.2em 0 14px}
+  .product .price small{font-family:"Work Sans";font-size:.8rem;color:var(--ink-soft);letter-spacing:0}
+  .product .btn{align-self:flex-start}
+
+  /* ---------- REDES / FOOTER ---------- */
+  /* ---------- FORMULARIO DE CONTACTO ---------- */
+  .form{
+    display:grid;grid-template-columns:1fr 1fr;gap:18px 22px;max-width:760px;
+  }
+  .field{display:flex;flex-direction:column;gap:7px}
+  .field--full{grid-column:1 / -1}
+  .form label{
+    font-family:"Special Elite",monospace;font-size:.74rem;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);
+  }
+  .form input,.form textarea{
+    font-family:"Work Sans",sans-serif;font-size:1rem;color:var(--ink);
+    background:var(--bone);border:2px solid var(--ink);border-radius:0;
+    padding:12px 14px;width:100%;resize:vertical;
+    transition:border-color .18s, box-shadow .18s;
+  }
+  .form input::placeholder,.form textarea::placeholder{color:#9a917f}
+  .form input:focus,.form textarea:focus{
+    outline:none;border-color:var(--red);box-shadow:4px 4px 0 var(--red-dark);
+  }
+  .form-actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+  .form-note{font-size:.85rem;color:var(--ink-soft);margin:0}
+  .form-alt{grid-column:1 / -1;margin:2px 0 0;font-size:.85rem;color:var(--ink-soft)}
+  .form-alt a{color:var(--red-dark);text-decoration:underline}
+  .hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
+  @media(max-width:640px){ .form{grid-template-columns:1fr} }
+
+  /* ---------- REDES / FOOTER ---------- */
+  #redes{background:var(--ink);color:var(--bone);border-top:3px solid var(--red)}
+  #redes .eyebrow{color:#e9a1a1}
+  #redes .eyebrow::before{background:var(--red)}
+  #redes h2{color:var(--bone)}
+  .socials{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px}
+  .social{
+    display:flex;align-items:center;gap:11px;text-decoration:none;
+    border:1px solid #453d33;padding:14px 18px;min-width:210px;
+    transition:background .2s,border-color .2s,transform .15s;
+  }
+  .social:hover{background:#221d17;border-color:var(--red);transform:translateY(-2px)}
+  .social .ico{width:22px;height:22px;flex:none;color:var(--red)}
+  .social b{display:block;font-family:"Special Elite",monospace;letter-spacing:.06em;font-size:.9rem}
+  .social span{font-size:.82rem;color:#b8ad9b}
+
+  .foot-meta{
+    display:flex;flex-wrap:wrap;gap:26px 48px;margin-top:56px;
+    padding-top:28px;border-top:1px solid #3a332b;
+    font-size:.9rem;color:#b8ad9b;
+  }
+  .foot-meta b{color:var(--bone);font-family:"Special Elite",monospace;font-weight:400;letter-spacing:.06em;display:block;margin-bottom:4px}
+  .copyright{margin-top:34px;font-size:.78rem;color:#7d7466;font-family:"Special Elite",monospace;letter-spacing:.08em}
+
+  /* reveal al hacer scroll */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease, transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  :focus-visible{outline:3px solid var(--red);outline-offset:3px}
+
+  @media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<!-- Glitter: campo de estrellitas rojas que se desplaza al scrollear -->
+<canvas id="glitter" aria-hidden="true"></canvas>
+
+<!-- ====================== NAV ====================== -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="d. von Pontiak, inicio">
+      <img class="brand-logo" src="logo.png" alt="d. von Pontiak">
+    </a>
+    <nav class="menu" aria-label="Principal">
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menuPanel">
+        <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
+        Menú
+      </button>
+      <div class="menu-panel" id="menuPanel" hidden>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#merch">Merch</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- ====================== HERO ====================== -->
+<main id="top" class="hero">
+  <div class="wrap hero-copy">
+    <span class="eyebrow">Estudio de tatuajes · Buenos Aires</span>
+    <img class="hero-logo" src="logo.png" alt="d. von Pontiak">
+    <p class="lead">Cada diseño es un grito íntimo convertido en arte visible. Reservá tu sesión y hacé de tu idea algo permanente.</p>
+    <div class="hero-cta">
+      <a class="btn" href="https://ig.me/m/d.vonpontiak__" target="_blank" rel="noopener">Reservá tu turno</a>
+      <a class="btn ghost" href="#portfolio">Ver portfolio</a>
+    </div>
+  </div>
+</main>
+
+<!-- ====================== PORTFOLIO / FEED DE INSTAGRAM ====================== -->
+<!-- == PORTFOLIO (feed de Instagram · Elfsight) ==
+     Feed embebido con Elfsight (usuario público @d.vonpontiak__).
+     Para cambiar el feed, reemplazá el <div class="elfsight-app-..."> por el nuevo
+     que te de Elfsight. El <script> de platform.js va una sola vez. -->
+<section id="portfolio">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Portfolio</span>
+      <h2>Tattoos</h2>
+    </div>
+
+    <div class="ig-embed reveal">
+      <!-- Elfsight Instagram Feed -->
+      <script src="https://elfsightcdn.com/platform.js" async></script>
+      <div class="elfsight-app-d40a9c7f-b7b0-4390-85e6-b41671d147a2" data-elfsight-app-lazy></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== MERCH ====================== -->
+<!-- == MERCH ==
+     Dos modelos de encendedor (merch1.png y merch2.png, ya con fondo transparente).
+     Subí esas dos imágenes al repo junto al index.html. Cambiá el precio ($—) y
+     los nombres (Modelo 1 / Modelo 2) por los que uses. El botón "Comprar" abre el DM. -->
+<section id="merch">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Store</span>
+      <h2>Merch</h2>
+    </div>
+
+    <div class="merch-grid">
+      <div class="product reveal">
+        <div class="product-media"><img src="merch1.png" alt="Lighter d. von Pontiak — Modelo 1"></div>
+        <div class="product-body">
+          <span class="tag">Merch</span>
+          <h3>Lighter · Modelo 1</h3>
+          <div class="price">$—  <small>ARS</small></div>
+          <a class="btn" href="https://ig.me/m/d.vonpontiak__" target="_blank" rel="noopener">Comprar</a>
+        </div>
+      </div>
+
+      <div class="product reveal">
+        <div class="product-media"><img src="merch2.png" alt="Lighter d. von Pontiak — Modelo 2"></div>
+        <div class="product-body">
+          <span class="tag">Merch</span>
+          <h3>Lighter · Modelo 2</h3>
+          <div class="price">$—  <small>ARS</small></div>
+          <a class="btn" href="https://ig.me/m/d.vonpontiak__" target="_blank" rel="noopener">Comprar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== CONTACTO ====================== -->
+<!-- == CONTACTO ==
+     El formulario envía por email vía Web3Forms (sin backend) usando la access_key
+     del <input hidden>. Llega a la casilla asociada a esa key en tu cuenta de Web3Forms.
+     Se envía por detrás (AJAX) y muestra el aviso sin recargar la página.
+     Para cambiar de cuenta/mail, reemplazá el value de "access_key". -->
+<section id="contacto">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Contacto</span>
+      <h2>Expresá tu diseño</h2>
+      <p>Dejanos los datos de lo que querés tatuarte y coordinamos turno y presupuesto.</p>
+    </div>
+
+    <form id="contactForm" class="form reveal" action="https://api.web3forms.com/submit" method="POST" novalidate>
+      <input type="hidden" name="access_key" value="5d57758b-0b87-4321-ac61-f39ec818f69c">
+      <input type="hidden" name="subject" value="Nueva consulta desde el sitio · d. von Pontiak">
+      <input type="hidden" name="from_name" value="Sitio d. von Pontiak">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="field">
+        <label for="f-nombre">Nombre</label>
+        <input id="f-nombre" name="nombre" type="text" autocomplete="name" required placeholder="Tu nombre">
+      </div>
+      <div class="field">
+        <label for="f-contacto">Instagram</label>
+        <input id="f-contacto" name="contacto" type="text" required placeholder="Ej: @tu_usuario">
+      </div>
+      <div class="field field--full">
+        <label for="f-zona">Zona del cuerpo y tamaño aprox.</label>
+        <input id="f-zona" name="zona" type="text" placeholder="Ej: antebrazo, 15 cm">
+      </div>
+      <div class="field field--full">
+        <label for="f-idea">Tu idea</label>
+        <textarea id="f-idea" name="idea" rows="5" required placeholder="Contanos qué querés tatuarte, estilo, referencias, color o blackwork…"></textarea>
+      </div>
+      <div class="field field--full form-actions">
+        <button class="btn" type="submit">Enviar</button>
+        <p class="form-note" id="formNote" role="status"></p>
+      </div>
+      <p class="form-alt">¿Preferís Instagram? <a href="https://ig.me/m/d.vonpontiak__" target="_blank" rel="noopener">Consultá por DM</a></p>
+    </form>
+  </div>
+</section>
+
+<!-- ====================== REDES / FOOTER ====================== -->
+<!-- == REDES ==  poné tus usuarios y links reales. -->
+<section id="redes">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Redes</span>
+    </div>
+
+    <div class="socials reveal">
+      <a class="social" href="https://instagram.com/d.vonpontiak__" target="_blank" rel="noopener">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+        <span><b>Instagram</b><span>@d.vonpontiak__</span></span>
+      </a>
+    </div>
+
+    <div class="foot-meta">
+      <div><b>Turnos</b>Solo con reserva previa<br>vía Instagram o formulario de contacto</div>
+    </div>
+
+    <div class="copyright">© <span id="year"></span> d. von Pontiak · Estudio de Tatuajes</div>
+  </div>
+</section>
+
+<script>
+  // ---- Glitter: estrellitas rojas en toda la página, se desplazan al scrollear ----
+  (function(){
+    var c = document.getElementById('glitter');
+    if(!c) return;
+    var ctx = c.getContext('2d');
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var DPR = Math.min(window.devicePixelRatio || 1, 2);
+    var W = 0, H = 0, parts = [], raf = null;
+    var colors = ['#c2181b', '#e0403f', '#7c0d10', '#9e1114'];
+    var scrollY = window.pageYOffset || 0;
+
+    function resize(){
+      W = c.clientWidth; H = c.clientHeight;
+      c.width = Math.round(W * DPR); c.height = Math.round(H * DPR);
+      ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    }
+
+    function build(){
+      var count = Math.max(60, Math.min(200, Math.round((W * H) / 8500)));
+      parts = [];
+      for(var i = 0; i < count; i++){
+        parts.push({
+          x: Math.random() * W,
+          y: Math.random() * H,
+          r: 0.9 + Math.random() * 2.6,        // tamaño de la estrellita
+          depth: 0.12 + Math.random() * 0.75,  // capa (parallax al scrollear)
+          phase: Math.random() * Math.PI * 2,
+          tw: 0.5 + Math.random() * 1.7,        // velocidad de brillo
+          col: colors[(Math.random() * colors.length) | 0],
+          rot: Math.random() * Math.PI
+        });
+      }
+    }
+
+    function star(x, y, r, rot){
+      ctx.beginPath();
+      for(var i = 0; i < 5; i++){
+        var a = rot + i * 2 * Math.PI / 5 - Math.PI / 2;
+        var px = x + Math.cos(a) * r, py = y + Math.sin(a) * r;
+        i ? ctx.lineTo(px, py) : ctx.moveTo(px, py);
+        var b = a + Math.PI / 5;
+        ctx.lineTo(x + Math.cos(b) * r * 0.45, y + Math.sin(b) * r * 0.45);
+      }
+      ctx.closePath();
+      ctx.fill();
+    }
+
+    function draw(t){
+      ctx.clearRect(0, 0, W, H);
+      for(var i = 0; i < parts.length; i++){
+        var p = parts[i];
+        var y = p.y - scrollY * p.depth;      // desplazamiento al scrollear
+        y = ((y % H) + H) % H;                 // se repite para cubrir toda la página
+        var tw = reduce ? 0.8 : (0.4 + 0.6 * Math.sin(t * 0.001 * p.tw + p.phase));
+        ctx.globalAlpha = Math.max(0, tw) * 0.9;
+        ctx.fillStyle = p.col;
+        star(p.x, y, p.r, p.rot);
+      }
+      ctx.globalAlpha = 1;
+      if(!reduce) raf = requestAnimationFrame(draw);
+    }
+
+    window.addEventListener('scroll', function(){
+      scrollY = window.pageYOffset || 0;
+      if(reduce) draw(0);                      // en modo "movimiento reducido": solo se mueve al scrollear
+    }, {passive:true});
+
+    window.addEventListener('resize', function(){
+      resize(); build(); if(reduce) draw(0);
+    });
+
+    resize(); build();
+    if(reduce){ draw(0); } else { raf = requestAnimationFrame(draw); }
+  })();
+
+  // ---- Reveal al hacer scroll ----
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){
+      els.forEach(function(el){el.classList.add('in')}); return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, {threshold:0.12});
+    els.forEach(function(el){io.observe(el)});
+  })();
+
+  // ---- Formulario de contacto -> Web3Forms (envío por email, sin recargar) ----
+  (function(){
+    var form = document.getElementById('contactForm');
+    if(!form) return;
+    var note = document.getElementById('formNote');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(!form.checkValidity()){ form.reportValidity(); return; }
+      var btn = form.querySelector('button[type="submit"]');
+      var original = btn ? btn.textContent : '';
+      if(btn){ btn.disabled = true; btn.textContent = 'Enviando…'; }
+      if(note){ note.style.color = 'var(--ink-soft)'; note.textContent = ''; }
+
+      fetch(form.action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      })
+      .then(function(r){ return r.json(); })
+      .then(function(res){
+        if(res.success){
+          form.reset();
+          if(note) note.textContent = '¡Listo! Recibimos tu mensaje, te contestamos a la brevedad.';
+        } else {
+          if(note){ note.style.color = 'var(--red-dark)'; note.textContent = 'No se pudo enviar. Probá de nuevo o escribinos por Instagram.'; }
+        }
+      })
+      .catch(function(){
+        if(note){ note.style.color = 'var(--red-dark)'; note.textContent = 'Problema de conexión. Probá de nuevo o escribinos por Instagram.'; }
+      })
+      .then(function(){
+        if(btn){ btn.disabled = false; btn.textContent = original; }
+      });
+    });
+  })();
+
+  // ---- Menú desplegable ----
+  (function(){
+    var btn = document.getElementById('menuBtn');
+    var panel = document.getElementById('menuPanel');
+    if(!btn || !panel) return;
+    function open(){ panel.hidden = false; btn.setAttribute('aria-expanded','true'); }
+    function close(){ panel.hidden = true; btn.setAttribute('aria-expanded','false'); }
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      panel.hidden ? open() : close();
+    });
+    // cerrar al elegir una opción
+    panel.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', close); });
+    // cerrar al hacer click afuera o con Escape
+    document.addEventListener('click', function(e){
+      if(!panel.hidden && !panel.contains(e.target) && e.target !== btn) close();
+    });
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape') close(); });
+  })();
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
