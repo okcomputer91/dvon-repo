@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>d. von Pontiak · Estudio de Tatuajes</title>
+<meta name="description" content="Estudio de tatuajes. Trabajo tradicional y a medida. Reservá tu turno.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Special+Elite&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+<style>
+:root{
+  --paper:#f4f1e9;
+  --paper-2:#ebe7dc;
+  --ink:#11110f;
+  --muted:#6d6a62;
+  --line:#1b1b18;
+  --red:#d71920;
+  --pink:#ef6f8e;
+  --maxw:1440px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Work Sans",Arial,sans-serif;
+  font-size:16px;
+  line-height:1.35;
+  overflow-x:hidden;
+}
+body::before{display:none}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 34px;position:relative;z-index:2}
+header.nav{
+  position:sticky;top:0;z-index:20;
+  background:rgba(244,241,233,.94);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  height:54px;display:flex;align-items:center;justify-content:space-between;
+  gap:24px;
+}
+.brand{display:flex;align-items:center;text-decoration:none}
+.brand-logo{height:27px;width:auto}
+.nav-links{display:flex;align-items:center;gap:0}
+.nav-links a{
+  padding:0 14px;text-decoration:none;
+  font-family:"Special Elite",monospace;
+  font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;
+  border-left:1px solid var(--line);
+}
+.nav-links a:last-child{padding-right:0}
+.hero{
+  min-height:auto;display:block;padding:0;position:relative;overflow:hidden;
+}
+.hero-inner{position:relative;z-index:3;width:100%}
+.hero-top{
+  display:grid;grid-template-columns:1fr auto;gap:20px;
+  border-bottom:1px solid var(--line);
+  padding:9px 0;
+  font-family:"Special Elite",monospace;text-transform:uppercase;
+  letter-spacing:.1em;font-size:.66rem;
+}
+.hero-logo{
+  width:min(86vw,760px);height:auto;display:block;
+  margin:70px auto 42px;
+  filter:none;
+}
+.hero-grid{
+  display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px;
+  max-width:1180px;margin:0 auto;
+  border-top:1px solid var(--line);
+  padding:20px 0 24px;
+}
+.hero-grid .lead{
+  font-family:"Special Elite",monospace;
+  font-size:clamp(1.05rem,2vw,1.45rem);
+  max-width:32ch;margin:0;
+}
+.hero-cta{display:flex;gap:0;margin:0}
+.btn{
+  display:inline-block;text-decoration:none;cursor:pointer;
+  font-family:"Special Elite",monospace;font-size:.68rem;
+  letter-spacing:.11em;text-transform:uppercase;
+  padding:10px 15px;border:1px solid var(--ink);
+  background:transparent;color:var(--ink);
+  transition:background .2s,color .2s;
+}
+.btn:hover{background:var(--ink);color:var(--paper);transform:none}
+.btn.ghost{border-left:0}
+.cat-strip{
+  overflow:hidden;margin:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:10px 0;
+}
+.cat-track{display:flex;width:max-content;animation:catmarq 24s linear infinite}
+.cat-group{display:flex;flex:0 0 auto}
+.cat-strip span{
+  font-family:"Special Elite",monospace;text-transform:uppercase;letter-spacing:.1em;
+  font-size:.68rem;color:var(--ink);padding:0 22px;white-space:nowrap;
+  display:inline-flex;align-items:center;
+}
+.cat-strip span::after{content:"✳";color:var(--red);margin-left:22px;font-size:.75em}
+@keyframes catmarq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.hero-video{
+  position:relative;z-index:2;margin:0;
+  border-bottom:1px solid var(--line);
+}
+.hero-video .wrap{max-width:none;padding:0}
+.lighter-vid{
+  width:100%;max-width:none;height:min(62vw,700px);display:block;
+  aspect-ratio:16/7;object-fit:cover;border:0;background:var(--paper-2)
+}
+.marquee{
+  position:relative;z-index:2;overflow:hidden;white-space:nowrap;
+  background:var(--red);border:0;padding:9px 0;
+}
+.marquee-track{display:inline-flex;white-space:nowrap;animation:marq 22s linear infinite}
+.marquee-track span{
+  font-family:"Permanent Marker",cursive;color:var(--paper);
+  font-size:clamp(1.25rem,3vw,2rem);padding-right:0
+}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+section{
+  position:relative;z-index:2;padding:110px 0;
+  border-top:1px solid var(--line);
+}
+.sec-head{max-width:1180px;margin:0 auto 44px}
+.eyebrow{
+  font-family:"Special Elite",monospace;font-size:.67rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--red);
+  display:inline-flex;align-items:center;gap:.6em;
+}
+.eyebrow::before{content:"";width:18px;height:1px;background:var(--red)}
+h2{
+  font-family:"Special Elite",monospace;font-weight:400;
+  text-transform:uppercase;letter-spacing:.02em;line-height:.9;
+  font-size:clamp(3.4rem,8vw,7rem);margin:.18em 0 0;
+}
+.sec-head p{max-width:540px;color:var(--muted);font-size:1rem}
+.portfolio-box{
+  position:relative;z-index:2;background:transparent;border:0;box-shadow:none;padding:0;
+}
+.deck{
+  display:flex;align-items:stretch;padding:8px 0 22px;
+  max-width:1180px;margin:0 auto;
+}
+.deck .card{
+  flex:0 0 30%;margin-left:-5%;position:relative;aspect-ratio:3/4;overflow:hidden;
+  border:1px solid var(--ink);background:var(--paper-2);
+  box-shadow:none;cursor:pointer;outline:none;
+  transition:transform .35s ease,box-shadow .25s;
+}
+.deck .card:first-child{margin-left:0}
+.deck .card img{width:100%;height:100%;object-fit:cover;display:block}
+.deck .card figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:34px 12px 10px;color:var(--paper);
+  font-family:"Special Elite",monospace;text-transform:uppercase;letter-spacing:.1em;font-size:.68rem;
+  background:linear-gradient(transparent,rgba(0,0,0,.85));
+  opacity:0;transform:none;transition:opacity .25s;
+}
+.deck .card:hover,.deck .card:focus,.deck .card.active{
+  z-index:6;transform:translateY(-12px);box-shadow:10px 10px 0 var(--red)
+}
+.deck .card:hover figcaption,.deck .card:focus figcaption,.deck .card.active figcaption{opacity:1}
+.deck .card:hover ~ .card,.deck .card:focus ~ .card,.deck .card.active ~ .card{transform:translateX(30%)}
+.works-head{display:flex;align-items:baseline;gap:14px;max-width:1180px;margin:72px auto 18px}
+.works-head .eyebrow{margin:0}
+.works-marquee{
+  overflow:hidden;
+  max-width:1180px;margin:0 auto;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);
+}
+.works-track{
+  display:flex;gap:14px;width:max-content;
+  animation:worksmarq 38s linear infinite;will-change:transform
+}
+.wm-item{
+  position:relative;flex:0 0 clamp(220px,20vw,300px);aspect-ratio:2/3;
+  margin:0;overflow:hidden;border:1px solid var(--ink);background:var(--paper-2)
+}
+.wm-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.wm-item:hover img{transform:scale(1.04)}
+.wm-item figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:24px 12px 10px;color:var(--paper);
+  font-family:"Special Elite",monospace;text-transform:uppercase;letter-spacing:.1em;font-size:.68rem;
+  background:linear-gradient(transparent,rgba(0,0,0,.82));opacity:0;transition:opacity .25s
+}
+.wm-item:hover figcaption{opacity:1}
+@keyframes worksmarq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.pframe{border:0;background:transparent;padding:0;max-width:1180px;margin:0 auto}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--ink)}
+.pgrid .cell{position:relative;margin:0;aspect-ratio:4/5;overflow:hidden;background:var(--ink);cursor:pointer}
+.pgrid .cell img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s}
+.pgrid .cell::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,0);transition:background .3s}
+.pgrid .cell:hover img{transform:scale(1.05)}
+.pgrid .cell:hover::after{background:rgba(0,0,0,.42)}
+.pgrid .cell figcaption{
+  position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;text-align:center;
+  padding:16px;color:var(--paper);opacity:0;transform:translateY(8px);
+  transition:opacity .3s,transform .3s;
+  font-family:"Special Elite",monospace;text-transform:uppercase;letter-spacing:.18em;font-size:.78rem
+}
+.pgrid .cell:hover figcaption{opacity:1;transform:none}
+.merch-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--ink);max-width:1180px;margin:0 auto}
+.product{position:relative;cursor:pointer;border:0;background:var(--paper);overflow:hidden}
+.product-media{
+  background:var(--paper-2);display:flex;align-items:center;justify-content:center;
+  padding:30px;border-bottom:1px solid var(--ink);aspect-ratio:1080/620
+}
+.product-media img{width:100%;height:100%;object-fit:contain;display:block}
+.product-body{padding:18px 20px 20px}
+.product .tag,.product-overlay .tag{
+  font-family:"Special Elite",monospace;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--red)
+}
+.product h3,.product-overlay h3{
+  font-family:"Special Elite",monospace;font-weight:400;text-transform:uppercase;
+  letter-spacing:.03em;font-size:1.2rem;margin:.5em 0 .2em
+}
+.product .price,.product-overlay .price{font-family:"Special Elite",monospace;font-size:1.35rem}
+.product .price small,.product-overlay .price small{font-family:"Work Sans";font-size:.75rem;color:var(--muted)}
+.product-overlay{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;
+  display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;
+  padding:16px 24px;background:rgba(17,17,15,.84);
+  border:1px solid var(--paper);color:var(--paper);min-width:64%;
+  opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s
+}
+.product:focus-within .product-overlay,.product.show .product-overlay{opacity:1;visibility:visible}
+@media(hover:hover){.product:hover .product-overlay{opacity:1;visibility:visible}}
+.form{
+  display:grid;grid-template-columns:1fr 1fr;gap:20px 24px;
+  width:min(100%,820px);max-width:820px;margin:0 auto;
+}
+.field{display:flex;flex-direction:column;gap:7px}
+.field--full{grid-column:1 / -1}
+.form label{
+  font-family:"Special Elite",monospace;font-size:.82rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted)
+}
+.form input,.form textarea{
+  font-family:"Work Sans",sans-serif;font-size:1.08rem;line-height:1.5;color:var(--ink);
+  background:transparent;border:1px solid var(--ink);border-radius:0;
+  padding:14px 16px;width:100%;resize:vertical
+}
+.form input:focus,.form textarea:focus{outline:none;border-color:var(--red);box-shadow:4px 4px 0 var(--red)}
+.form-actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.form-note,.form-alt{font-size:.95rem;color:var(--muted)}
+.form-alt{grid-column:1 / -1;margin:2px 0 0}
+.form-alt a{color:var(--red);text-decoration:underline}
+.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
+#redes{background:var(--ink);color:var(--paper);border-top:1px solid var(--ink)}
+#redes .eyebrow{color:var(--pink)}
+#redes .eyebrow::before{background:var(--pink)}
+#redes h2{color:var(--paper)}
+.socials{display:flex;flex-wrap:wrap;gap:1px;margin-top:8px;background:#333}
+.social{
+  display:flex;align-items:center;gap:11px;text-decoration:none;
+  background:var(--ink);border:0;padding:18px;min-width:230px
+}
+.social .ico{width:22px;height:22px;flex:none;color:var(--pink)}
+.social b{display:block;font-family:"Special Elite",monospace;letter-spacing:.06em;font-size:.85rem}
+.social span{font-size:.8rem;color:#aaa}
+.foot-meta{
+  display:flex;flex-wrap:wrap;gap:26px 48px;margin-top:56px;
+  padding-top:28px;border-top:1px solid #444;font-size:.85rem;color:#aaa
+}
+.foot-meta b{color:var(--paper);font-family:"Special Elite",monospace;font-weight:400;display:block;margin-bottom:4px}
+.copyright{margin-top:34px;font-size:.7rem;color:#777;font-family:"Special Elite",monospace;letter-spacing:.08em}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .55s,transform .55s}
+.reveal.in{opacity:1;transform:none}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+#glitter{position:fixed;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+@media(max-width:900px){
+  .wrap{padding:0 24px}
+  section{padding:76px 0}
+  .deck .card{flex-basis:34%;margin-left:-5%}
+  .deck .card:hover ~ .card,.deck .card:focus ~ .card,.deck .card.active ~ .card{transform:translateX(24%)}
+}
+@media(max-width:760px){
+  .nav-inner{height:50px}
+  .nav-links a{font-size:.62rem;padding:0 9px}
+  .hero-logo{width:min(90vw,620px);margin:46px auto 30px}
+  .hero-grid{grid-template-columns:1fr;gap:20px}
+  .hero-cta{justify-content:flex-start}
+  .lighter-vid{height:58vw;min-height:250px}
+  section{padding:64px 0}
+  h2{font-size:clamp(3.2rem,13vw,6rem)}
+  .deck{width:100%;padding-bottom:24px}
+  .deck .card{flex-basis:38%;margin-left:-5%}
+  .deck .card:first-child{margin-left:0}
+  .deck .card:hover,.deck .card:focus,.deck .card.active{transform:translateY(-8px)}
+  .deck .card:hover ~ .card,.deck .card:focus ~ .card,.deck .card.active ~ .card{transform:translateX(22%)}
+  .deck .card figcaption{opacity:1}
+  .form{grid-template-columns:1fr;width:100%;max-width:720px}
+  .form label{font-size:.78rem}
+  .form input,.form textarea{font-size:1rem}
+}
+@media(max-width:520px){
+  .wrap{padding:0 16px}
+  .hero-top{grid-template-columns:1fr;font-size:.6rem;gap:4px}
+  .hero-logo{margin:34px auto 24px}
+  .hero-grid{padding-top:16px}
+  .hero-grid .lead{font-size:1rem}
+  .cat-strip span{padding:0 12px;font-size:.61rem}
+  .cat-strip span::after{margin-left:12px}
+  .lighter-vid{height:58vw;min-height:210px}
+  .deck .card{flex-basis:44%;margin-left:-5%}
+  .deck .card:hover ~ .card,.deck .card:focus ~ .card,.deck .card.active ~ .card{transform:translateX(18%)}
+  .works-track{gap:8px}
+  .wm-item{flex-basis:68vw}
+  .pgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:1px}
+}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+  .cat-track,.marquee-track,.works-track{animation:none}
+}
+
+  .contact-section,.contact-wrap,.contact-form-wrap{display:flex;flex-direction:column;align-items:center;text-align:center}
+  .contact-form{width:min(100%,760px);margin:0 auto}
+  .contact-form label,.contact-form input,.contact-form textarea,.contact-form button{text-align:left}
+
+
+  .gallery-frame{
+    width:min(1180px,calc(100% - 32px));
+    margin:clamp(36px,7vw,90px) auto;
+    padding:clamp(16px,3vw,34px);
+    border:1px solid var(--line);
+    background:rgba(255,255,255,.55);
+    box-shadow:0 18px 50px rgba(0,0,0,.08);
+    position:relative;
+    overflow:hidden;
+  }
+  .gallery-frame::before{
+    content:"";
+    position:absolute;
+    inset:8px;
+    border:1px solid rgba(0,0,0,.08);
+    pointer-events:none;
+  }
+  .gallery-frame>*{position:relative;z-index:1}
+
+
+  .deck{display:flex;justify-content:center;align-items:flex-end;position:relative;width:min(1120px,100%);margin:0 auto;padding:50px 7% 70px;overflow:visible;perspective:1400px}
+  .deck .card{flex:0 0 clamp(180px,24vw,310px);margin-left:clamp(-120px,-8vw,-55px);position:relative;transform-origin:50% 100%;transition:transform .65s cubic-bezier(.2,.8,.2,1),z-index .1s;will-change:transform;z-index:1}
+  .deck .card:first-child{margin-left:0}
+  .deck .card:nth-child(1){transform:rotate(-14deg) translateY(18px)}
+  .deck .card:nth-child(2){transform:rotate(-9deg) translateY(8px)}
+  .deck .card:nth-child(3){transform:rotate(-4deg)}
+  .deck .card:nth-child(4){transform:rotate(3deg)}
+  .deck .card:nth-child(5){transform:rotate(9deg) translateY(8px)}
+  .deck .card:nth-child(6){transform:rotate(14deg) translateY(18px)}
+  .deck .card:hover,.deck .card:focus,.deck .card.active{transform:rotate(0deg) translateY(-28px) scale(1.06);z-index:20}
+  .deck .card:hover~.card{transform:translateX(9%) rotate(4deg)}
+  .deck .card:focus~.card,.deck .card.active~.card{transform:translateX(11%) rotate(5deg)}
+  .deck .card figcaption{opacity:0;transition:opacity .3s,transform .3s;transform:translateY(8px)}
+  .deck .card:hover figcaption,.deck .card:focus figcaption,.deck .card.active figcaption{opacity:1;transform:translateY(0)}
+  @media(max-width:760px){
+    .deck{padding:34px 4% 55px;perspective:1100px}
+    .deck .card{flex-basis:34vw;min-width:125px;margin-left:-13vw}
+    .deck .card:nth-child(1){transform:rotate(-16deg) translateY(14px)}
+    .deck .card:nth-child(2){transform:rotate(-10deg) translateY(7px)}
+    .deck .card:nth-child(3){transform:rotate(-4deg)}
+    .deck .card:nth-child(4){transform:rotate(4deg)}
+    .deck .card:nth-child(5){transform:rotate(10deg) translateY(7px)}
+    .deck .card:nth-child(6){transform:rotate(16deg) translateY(14px)}
+    .deck .card:hover,.deck .card:focus,.deck .card.active{transform:rotate(0deg) translateY(-18px) scale(1.08);z-index:20}
+    .deck .card:hover~.card,.deck .card:focus~.card,.deck .card.active~.card{transform:translateX(8vw) rotate(5deg)}
+    .deck .card figcaption{opacity:1;transform:none}
+  }
+  @media(max-width:480px){
+    .deck{padding-left:2%;padding-right:2%}
+    .deck .card{flex-basis:32vw;min-width:108px;margin-left:-12vw}
+  }
+
+</style>
+
+</head>
+<body>
+
+<canvas id="glitter" aria-hidden="true"></canvas>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  
+</svg>
+<div class="doodles" aria-hidden="true">
+  <svg class="doodle" style="top:12%;left:5%;width:64px;transform:rotate(-14deg)">
+  <svg class="doodle red" style="top:23%;left:89%;width:44px;transform:rotate(10deg)">
+  <svg class="doodle" style="top:47%;left:92%;width:68px;transform:rotate(-6deg)">
+  <svg class="doodle" style="top:63%;left:3%;width:52px;transform:rotate(16deg)">
+  <svg class="doodle red" style="top:80%;left:12%;width:36px;transform:rotate(-20deg)">
+  <svg class="doodle" style="top:86%;left:82%;width:58px;transform:rotate(8deg)">
+  <svg class="doodle" style="top:35%;left:47%;width:28px;transform:rotate(22deg)">
+  <svg class="doodle red" style="top:6%;left:62%;width:32px;transform:rotate(-8deg)">
+</div>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="d. von Pontiak, inicio">
+      <img class="brand-logo" src="logo.png" alt="d. von Pontiak">
+    </a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#portfolio">Portfolio</a>
+      <a href="#merch">Merch</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top" class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-top">
+      <span>Estudio de tatuajes</span>
+      <span>Buenos Aires · AR</span>
+    </div>
+
+    <img class="hero-logo" src="logo.png" alt="d. von Pontiak">
+
+    <div class="hero-grid">
+      <p class="lead">Cada diseño es un grito íntimo convertido en arte visible.</p>
+      <div class="hero-cta">
+        <a class="btn" href="https://ig.me/m/d.vonpontiak__" target="_blank" rel="noopener">Reservá tu turno</a>
+        <a class="btn ghost" href="#portfolio">Ver portfolio</a>
+      </div>
+    </div>
+
+    <div class="cat-strip" aria-label="Estilos">
+      <div class="cat-track">
+        <div class="cat-group"><span>Blackwork</span><span>Fine line</span><span>Tradicional</span><span>Lettering</span><span>Realismo</span><span>Micro</span></div>
+        <div class="cat-group" aria-hidden="true"><span>Blackwork</span><span>Fine line</span><span>Tradicional</span><span>Lettering</span><span>Realismo</span><span>Micro</span></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div class="hero-video">
+  <div class="wrap">
+    <video class="lighter-vid" autoplay muted loop playsinline preload="metadata" poster="merch1.png">
+      <source src="merch-video.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>d. von Pontiak&nbsp;&nbsp;&nbsp;&nbsp;d. von Pontiak&nbsp;&nbsp;&nbsp;&nbsp;d. von Pontiak&nbsp;&nbsp;&nbsp;&nbsp;d. von Pontiak&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <span>d. von Pontiak&nbsp;&nbsp;&nbsp;&nbsp;d. von Pontiak&nbsp;&nbsp;&nbsp;&nbsp;d. von Pontiak&nbsp;&nbsp;&nbsp;&nbsp;d. von Pontiak&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  </div>
+</div>
+
+<section id="portfolio">
+  <div class="wrap">
+    <div class="portfolio-box">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Portfolio</span>
+      <h2>Tattoos</h2>
+    </div>
+
+    <div class="deck reveal" id="deck">
+      <figure class="card" data-title="Blackwork" tabindex="0"><img src="https://picsum.photos/seed/ink1/800/1050" alt="Trabajo 1" loading="lazy"><figcaption>Blackwork</figcaption></figure>
+      <figure class="card" data-title="Fine line" tabindex="0"><img src="https://picsum.photos/seed/ink2/800/1050" alt="Trabajo 2" loading="lazy"><figcaption>Fine line</figcaption></figure>
+      <figure class="card" data-title="Tradicional" tabindex="0"><img src="https://picsum.photos/seed/ink3/800/1050" alt="Trabajo 3" loading="lazy"><figcaption>Tradicional</figcaption></figure>
+      <figure class="card" data-title="Lettering" tabindex="0"><img src="https://picsum.photos/seed/ink4/800/1050" alt="Trabajo 4" loading="lazy"><figcaption>Lettering</figcaption></figure>
+      <figure class="card" data-title="Realismo" tabindex="0"><img src="https://picsum.photos/seed/ink5/800/1050" alt="Trabajo 5" loading="lazy"><figcaption>Realismo</figcaption></figure>
+      <figure class="card" data-title="Micro" tabindex="0"><img src="https://picsum.photos/seed/ink6/800/1050" alt="Trabajo 6" loading="lazy"><figcaption>Micro</figcaption></figure>
+    </div>
+
+    <div class="works-head reveal">
+      <span class="eyebrow">Galería</span>
+    </div>
+
+    <div class="works-marquee reveal">
+      <div class="works-track">
+        <figure class="wm-item"><img src="https://picsum.photos/seed/ink1/700/900" alt="Trabajo 1" loading="lazy"><figcaption>Blackwork</figcaption></figure>
+        <figure class="wm-item"><img src="https://picsum.photos/seed/ink2/700/900" alt="Trabajo 2" loading="lazy"><figcaption>Fine line</figcaption></figure>
+        <figure class="wm-item"><img src="https://picsum.photos/seed/ink3/700/900" alt="Trabajo 3" loading="lazy"><figcaption>Tradicional</figcaption></figure>
+        <figure class="wm-item"><img src="https://picsum.photos/seed/ink4/700/900" alt="Trabajo 4" loading="lazy"><figcaption>Lettering</figcaption></figure>
+        <figure class="wm-item"><img src="https://picsum.photos/seed/ink5/700/900" alt="Trabajo 5" loading="lazy"><figcaption>Realismo</figcaption></figure>
+        <figure class="wm-item"><img src="https://picsum.photos/seed/ink6/700/900" alt="Trabajo 6" loading="lazy"><figcaption>Micro</figcaption></figure>
+        <figure class="wm-item" aria-hidden="true"><img src="https://picsum.photos/seed/ink1/700/900" alt="" loading="lazy"><figcaption>Blackwork</figcaption></figure>
+        <figure class="wm-item" aria-hidden="true"><img src="https://picsum.photos/seed/ink2/700/900" alt="" loading="lazy"><figcaption>Fine line</figcaption></figure>
+        <figure class="wm-item" aria-hidden="true"><img src="https://picsum.photos/seed/ink3/700/900" alt="" loading="lazy"><figcaption>Tradicional</figcaption></figure>
+        <figure class="wm-item" aria-hidden="true"><img src="https://picsum.photos/seed/ink4/700/900" alt="" loading="lazy"><figcaption>Lettering</figcaption></figure>
+        <figure class="wm-item" aria-hidden="true"><img src="https://picsum.photos/seed/ink5/700/900" alt="" loading="lazy"><figcaption>Realismo</figcaption></figure>
+        <figure class="wm-item" aria-hidden="true"><img src="https://picsum.photos/seed/ink6/700/900" alt="" loading="lazy"><figcaption>Micro</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="works-head reveal">
+      <span class="eyebrow">Selección</span>
+    </div>
+
+    <div class="pframe reveal">
+      <div class="pgrid">
+        <figure class="cell"><img src="https://picsum.photos/seed/ink1/700/850" alt="Trabajo 1" loading="lazy"><figcaption>Blackwork</figcaption></figure>
+        <figure class="cell"><img src="https://picsum.photos/seed/ink2/700/850" alt="Trabajo 2" loading="lazy"><figcaption>Fine line</figcaption></figure>
+        <figure class="cell"><img src="https://picsum.photos/seed/ink3/700/850" alt="Trabajo 3" loading="lazy"><figcaption>Tradicional</figcaption></figure>
+        <figure class="cell"><img src="https://picsum.photos/seed/ink4/700/850" alt="Trabajo 4" loading="lazy"><figcaption>Lettering</figcaption></figure>
+        <figure class="cell"><img src="https://picsum.photos/seed/ink5/700/850" alt="Trabajo 5" loading="lazy"><figcaption>Realismo</figcaption></figure>
+        <figure class="cell"><img src="https://picsum.photos/seed/ink6/700/850" alt="Trabajo 6" loading="lazy"><figcaption>Micro</figcaption></figure>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+<section id="merch">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Store</span>
+      <h2>Merch</h2>
+    </div>
+
+    <div class="merch-grid">
+      <div class="product reveal">
+        <div class="product-media">
+          <img src="merch1.png" alt="Lighter d. von Pontiak — Modelo 1">
+          <div class="product-overlay">
+            <span class="tag">Merch</span>
+            <h3>Lighter · Modelo 1</h3>
+            <div class="price">$—  <small>ARS</small></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product reveal">
+        <div class="product-media">
+          <img src="merch2.png" alt="Lighter d. von Pontiak — Modelo 2">
+          <div class="product-overlay">
+            <span class="tag">Merch</span>
+            <h3>Lighter · Modelo 2</h3>
+            <div class="price">$—  <small>ARS</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Contacto</span>
+      <h2>Expresá tu diseño</h2>
+      
+    </div>
+
+    <form id="contactForm" class="form reveal" action="https://api.web3forms.com/submit" method="POST" novalidate>
+
+      <input type="hidden" name="access_key" value="5d57758b-0b87-4321-ac61-f39ec818f69c">
+      <input type="hidden" name="subject" value="Nueva consulta desde el sitio · d. von Pontiak">
+      <input type="hidden" name="from_name" value="Sitio d. von Pontiak">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="field">
+        <label for="f-nombre">Nombre</label>
+        <input id="f-nombre" name="nombre" type="text" autocomplete="name" required placeholder="Tu nombre">
+      </div>
+      <div class="field">
+        <label for="f-contacto">Instagram</label>
+        <input id="f-contacto" name="contacto" type="text" required placeholder="Ej: @tu_usuario">
+      </div>
+      <div class="field field--full">
+        <label for="f-zona">Zona del cuerpo y tamaño aprox.</label>
+        <input id="f-zona" name="zona" type="text" placeholder="Ej: antebrazo, 15 cm">
+      </div>
+      <div class="field field--full">
+        <label for="f-idea">Tu idea</label>
+        <textarea id="f-idea" name="idea" rows="5" required placeholder="Contanos qué querés tatuarte, estilo, referencias, color o blackwork…"></textarea>
+      </div>
+      <div class="field field--full form-actions">
+        <button class="btn" type="submit">Enviar</button>
+        <p class="form-note" id="formNote" role="status"></p>
+      </div>
+      <p class="form-alt">¿Preferís Instagram? <a href="https://ig.me/m/d.vonpontiak__" target="_blank" rel="noopener">Consultá por DM</a></p>
+    </form>
+  </div>
+</section>
+
+<section id="redes">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Redes</span>
+    </div>
+
+    <div class="socials reveal">
+      <a class="social" href="https://instagram.com/d.vonpontiak__" target="_blank" rel="noopener">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+        <span><b>Instagram</b><span>@d.vonpontiak__</span></span>
+      </a>
+    </div>
+
+    <div class="foot-meta">
+      <div><b>Turnos</b>Solo con reserva previa<br>vía Instagram o formulario de contacto</div>
+    </div>
+
+    <div class="copyright">© <span id="year"></span> d. von Pontiak · Estudio de Tatuajes</div>
+  </div>
+</section>
+
+<script>
+
+  (function(){
+    var c = document.getElementById('glitter');
+    if(!c) return;
+    var ctx = c.getContext('2d');
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var DPR = Math.min(window.devicePixelRatio || 1, 2);
+    var W = 0, H = 0, parts = [], raf = null;
+    var colors = ['#c2181b', '#e0403f', '#7c0d10', '#9e1114'];
+    var scrollY = window.pageYOffset || 0;
+
+    function resize(){
+      W = c.clientWidth; H = c.clientHeight;
+      c.width = Math.round(W * DPR); c.height = Math.round(H * DPR);
+      ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    }
+    function build(){
+      var count = Math.max(60, Math.min(200, Math.round((W * H) / 8500)));
+      parts = [];
+      for(var i = 0; i 
+</body>
+</html>
