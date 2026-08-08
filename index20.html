@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>d. von Pontiak · Estudio de Tatuajes</title>
+<meta name="description" content="Estudio de tatuajes. Trabajo tradicional y a medida. Reservá tu turno.">
+
+<link rel="preconnect" href="https://googleapis.com">
+<link rel="preconnect" href="https://gstatic.com" crossorigin>
+<link href="https://googleapis.com/css2?family=Permanent+Marker&family=Special+Elite&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --paper:#f4f1e9;
+  --paper-2:#ebe7dc;
+  --ink:#11110f;
+  --muted:#6d6a62;
+  --line:#1b1b18;
+  --red:#d71920;
+  --pink:#ef6f8e;
+  --maxw:1440px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Work Sans",Arial,sans-serif;
+  font-size:16px;
+  line-height:1.35;
+  overflow-x:hidden;
+}
+body::before{display:none}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 34px;position:relative;z-index:2}
+header.nav{
+  position:sticky;top:0;z-index:20;
+  background:rgba(244,241,233,.94);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  height:54px;display:flex;align-items:center;justify-content:space-between;
+  gap:24px;
+}
+.brand{display:flex;align-items:center;text-decoration:none}
+.brand-logo{height:27px;width:auto}
+.nav-links{display:flex;align-items:center;gap:0}
+.nav-links a{
+  padding:0 14px;text-decoration:none;
+  font-family:"Special Elite",monospace;
+  font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;
+  border-left:1px solid var(--line);
+}
+.nav-links a:last-child{padding-right:0}
+.hero{
+  min-height:auto;display:block;padding:0;position:relative;overflow:hidden;
+}
+.hero-inner{position:relative;z-index:3;width:100%}
+.hero-top{
+  display:grid;grid-template-columns:1fr auto;gap:20px;
+  border-bottom:1px solid var(--line);
+  padding:9px 0;
+  font-family:"Special Elite",monospace;text-transform:uppercase;
+  letter-spacing:.1em;font-size:.66rem;
+}
+.hero-logo{
+  width:min(86vw,760px);height:auto;display:block;
+  margin:70px auto 42px;
+  filter:none;
+}
+.hero-grid{
+  display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px;
+  max-width:1180px;margin:0 auto;
+  border-top:1px solid var(--line);
+  padding:20px 0 24px;
+}
+.hero-grid .lead{
+  font-family:"Special Elite",monospace;
+  font-size:clamp(1.05rem,2vw,1.45rem);
+  max-width:32ch;margin:0;
+}
+.hero-cta{display:flex;gap:0;margin:0}
+.btn{
+  display:inline-block;text-decoration:none;cursor:pointer;
+  font-family:"Special Elite",monospace;font-size:.68rem;
+  letter-spacing:.11em;text-transform:uppercase;
+  padding:10px 15px;border:1px solid var(--ink);
+  background:transparent;color:var(--ink);
+  transition:background .2s,color .2s;
+}
+.btn:hover{background:var(--ink);color:var(--paper);transform:none}
+.btn.ghost{border-left:0}
+.cat-strip{
+  overflow:hidden;margin:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:10px 0;
+}
+.cat-track{display:flex;width:max-content;animation:catmarq 24s linear infinite}
+.cat-group{display:flex;flex:0 0 auto}
+.cat-strip span{
+  font-family:"Special Elite",monospace;text-transform:uppercase;letter-spacing:.1em;
+  font-size:.68rem;color:var(--ink);padding:0 22px;white-space:nowrap;
+  display:inline-flex;align-items:center;
+}
+.cat-strip span::after{content:"✳";color:var(--red);margin-left:22px;font-size:.75em}
+@keyframes catmarq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.hero-video{
+  position:relative;z-index:2;margin:0;
+  border-bottom:1px solid var(--line);
+}
+.hero-video .wrap{max-width:none;padding:0}
+.lighter-vid{
+  width:100%;max-width:none;height:min(62vw,700px);display:block;
+  aspect-ratio:16/7;object-fit:cover;border:0;background:var(--paper-2)
+}
+.marquee{
+  position:relative;z-index:2;overflow:hidden;white-space:nowrap;
+  background:var(--red);border:0;padding:9px 0;
+}
+.marquee-track{display:inline-flex;white-space:nowrap;animation:marq 22s linear infinite}
+.marquee-track span{
+  font-family:"Permanent Marker",cursive;color:var(--paper);
+  font-size:clamp(1.25rem,3vw,2rem);padding-right:0
+}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+section{
+  position:relative;z-index:2;padding:110px 0;
+  border-top:1px solid var(--line);
+}
+.sec-head{max-width:1180px;margin:0 auto 44px}
+.eyebrow{
+  font-family:"Special Elite",monospace;font-size:.67rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--red);
+  display:inline-flex;align-items:center;gap:.6em;
+}
+.eyebrow::before{content:"";width:18px;height:1px;background:var(--red)}
+h2{
+  font-family:"Special Elite",monospace;font-weight:400;
+  text-transform:uppercase;letter-spacing:.02em;line-height:.9;
+  font-size:clamp(3.4rem,8vw,7rem);margin:.18em 0 0;
+}
+.sec-head p{max-width:540px;color:var(--muted);font-size:1rem}
+.portfolio-box{
+  position:relative;z-index:2;background:transparent;border:0;box-shadow:none;padding:0;
+}
+.deck-wrapper {
+  position: relative;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+.deck {
+  display: flex;
+  align-items: stretch;
+  padding: 40px 24px 60px;
+  margin: 0 auto;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+.deck::-webkit-scrollbar {
+  display: none;
+}
+.deck .card {
+  flex: 0 0 260px;
+  margin-right: -200px;
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  border: 2px solid var(--ink);
+  background: var(--paper-2);
+  box-shadow: -6px 0 0 0 var(--ink);
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform .2s cubic-bezier(0.25, 1, 0.5, 1), margin-right .2s cubic-bezier(0.25, 1, 0.5, 1), box-shadow .15s ease;
+}
+@media (min-width: 768px) {
+  .deck { padding: 40px 0 60px; }
+  .deck .card { flex: 0 0 300px; margin-right: -240px; }
+}
+.deck .card:last-child {
+  margin-right: 0;
+}
+.deck .card img{width:100%;height:100%;object-fit:cover;display:block;transition:filter .2s ease}
+.deck .card figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:34px 12px 10px;color:var(--paper);
+  font-family:"Special Elite",monospace;text-transform:uppercase;letter-spacing:.1em;font-size:.68rem;
+  background:linear-gradient(transparent,rgba(17,17,15,.95));
+  opacity:0;transform:none;transition:opacity .2s;
+}
+.deck .card:hover, .deck .card:focus, .deck .card.active {
+  z-index: 10;
+  transform: translateY(-16px) rotate(-1.5deg);
+  box-shadow: -8px 12px 0 var(--red), -8px 12px 0 2px var(--ink);
+}
+.deck .card:hover {
+  margin-right: -190px;
+}
+.deck .card.active {
+  margin-right: -140px;
+}
+@media (min-width: 768px) {
+  .deck .card:hover { margin-right: -190px; }
+  .deck .card.active { margin-right: -180px; }
+}
+.deck .card:last-child:hover, .deck .card:last-child:focus, .deck .card:last-child.active {
+  margin-right: 0;
+}
+.deck .card:hover figcaption, .deck .card:focus figcaption, .deck .card.active figcaption {
+  opacity:1;
+}
+.deck-nav {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  color: var(--ink);
+  font-family: "Special Elite", monospace;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 15;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s, color .2s, box-shadow .2s;
+}
+.deck-nav:hover {
+  background: var(--ink);
+  color: var(--paper);
+  box-shadow: 4px 4px 0 var(--red);
+}
+.deck-nav.prev { left: -54px; }
+.deck-nav.next { right: -54px; }
+@media (min-width: 1300px) {
+  .deck-nav { display: flex; }
+}
+.deck-counter {
+  font-family: "Special Elite", monospace;
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--muted);
+  max-width: 1180px;
+  margin: -10px auto 0;
+  padding: 0 24px;
+  text-align: right;
+}
+@media (min-width: 768px) {
+  .deck-counter { padding: 0; }
+}
+.deck-counter .current {
+  color: var(--red);
+}
+.works-head{display:flex;align-items:baseline;gap:14px;max-width:1180px;margin:72px auto 18px}
+.works-head .eyebrow{margin:0}
+.works-marquee{
+  overflow:hidden;
+  max-width:1180px;margin:0 auto;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);
+}
+.works-track{
+  display:flex;gap:14px;width:max-content;
+  animation:worksmarq 38s linear infinite;will-change:transform
+}
+.wm-item{
+  position:relative;flex:0 0 clamp(220px,20vw,300px);aspect-ratio:2/3;
+  margin:0;overflow:hidden;border:1px solid var(--ink);background:var(--paper-2)
+}
+.wm-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.wm-item:hover img{transform:scale(1.04)}
+.wm-item figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:24px 12px 10px;color:var(--paper);
+  font-family:"Special Elite",monospace;text-transform:uppercase;letter-spacing:.1em;font-size:.68rem;
+  background:linear-gradient(transparent,rgba(0,0,0,.82));opacity:0;transition:opacity .25s
+}
+.wm-item:hover figcaption{opacity:1}
+@keyframes worksmarq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.pframe{border:0;background:transparent;padding:0;max-width:1180px;margin:0 auto}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--ink)}
+.pgrid .cell{position:relative;margin:0;aspect-ratio:4/5;overflow:hidden;background:var(--ink);cursor:pointer}
+.pgrid .cell img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s}
+.pgrid .cell::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,0);transition:background .3s}
+.pgrid .cell:hover img{transform:scale(1.05)}
+</style>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a href="#" class="brand">d. von Pontiak</a>
+      <nav class="nav-links">
